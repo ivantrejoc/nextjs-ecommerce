@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <nav className="w-full px-10 bg-yellow-200 justify-between items-center inline-flex">
+    <nav className="w-full px-10 pt-3 justify-between items-center inline-flex">
     <div className="justify-start items-start flex">
         <a className="text-black text-base font-normal font-['Open Sans'] capitalize leading-normal">Jewelry & Accessories</a>
     </div>
