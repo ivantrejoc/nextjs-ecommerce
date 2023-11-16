@@ -8,7 +8,7 @@ const ShoppingButton = () => {
           className="inline-flex items-center "
         >
           <HiShoppingBag />
-          <p className="font-medium text-lg text-black dark:text-gray-300 hover:underline pl-1">Shopping</p>
+          <p className="font-medium text-xl text-black dark:text-gray-300 hover:underline pl-1">Shopping</p>
         </a>
       </div>
     );
