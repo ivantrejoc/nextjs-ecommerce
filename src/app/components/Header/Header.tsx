@@ -2,26 +2,26 @@ import { AccountButton } from "../AccountButton.tsx";
 import { NavBar } from "../NavBar";
 import { ShoppingButton } from "../ShoppingButton/";
 import Image from "next/image";
+import { SearchBar } from "../SearchBar/";
 
 const Header = () => {
   return (
-    <header className="w-full h-64 flex-col px-2 justify-center items-center gap-[30px] inline-flex">
-      <div className="w-full h-40 top-0 absolute flex flex-row">
+    <header className="w-full h-48 flex-col px-2 justify-center items-center gap-[30px] inline-flex">
+      <div className="w-full h-36 top-0 absolute grid grid-cols-3 grid-rows-1 gap-20">
+        <SearchBar />
         <Image
-          className="ml-[40%] py-0 top-0"
+          className="ml-[30%] pt-0 pb-0 top-0 "
           src="/Buime-transparent.png"
-          height={260}
-          width={260}
+          height={130}
+          width={130}
           alt="buime logo"
         />
-        <div className="ml-auto my-12 py-5 content-end justify-between">
+        <div className="ml-auto my-10 py-2 px-auto pr-6 mr-6 h-12 content-center justify-between align-baseline">
           <AccountButton />
           <ShoppingButton />
         </div>
       </div>
-      <div className="w-full h-12 left-0 mt-12  absolute border border-gray-400">
-        <NavBar />
-      </div>
+      <NavBar />
     </header>
   );
 };
