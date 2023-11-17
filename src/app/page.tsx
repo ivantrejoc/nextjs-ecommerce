@@ -1,20 +1,29 @@
 import Image from "next/image";
+import { HiShoppingBag } from "react-icons/hi2";
 
 export default function Home() {
   return (
     <main>
-      <section className="flex flex-wrap">
-        <div className="">
-          <h2>Collections</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <section className="flex flex-wrap justify-center py-2 mx-24 mt-12">
+        <div className="w-1/4 px-6 mr-36">
+          <h3 className="text-black text-6xl font-light capitalize mt-24">
+            Collections
+          </h3>
+          <p className="text-black text-xl font-normal capitalize mt-12">
+            Explore many different collections from all our allies brands!
           </p>
-          <button>Shop Now</button>
+          <a href="/products" className="bg-blue-400 flex flex-row text-lg font-medium rounded-lg w-1/2 p-4 mt-12 justify-center hover:text-white hover:bg-blue-500">
+          <HiShoppingBag className="mt-1 mr-2" />
+                      Shop Now</a>
         </div>
-        <div className="w-[424px] h-[542px] rounded-tl-full rounded-br-full flex-col justify-center items-center inline-flex">
-          <Image src="/models-images/engin-akyurt-jaZoffxg1yc-unsplash%201.png" height={700} width={350} alt="" />
-        </div>
+
+        <Image
+          className="rounded-tl-3xl rounded-br-3xl"
+          src="/models-images/engin-akyurt-jaZoffxg1yc-unsplash%201.png"
+          height={700}
+          width={350}
+          alt=""
+        />
       </section>
 
       <section>

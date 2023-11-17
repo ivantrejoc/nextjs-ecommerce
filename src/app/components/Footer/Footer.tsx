@@ -111,7 +111,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className=" bg-blue-500 grid grid-cols-3 grid-rows-1 gap-60 h-12 place-items-center">
+      <div className=" bg-blue-400 grid grid-cols-3 grid-rows-1 gap-60 h-12 place-items-center">
         <div className=" ml-6">
           <span className="text-sm text-gray-800 sm:text-center dark:text-gray-400">
             © 2023{" "}
