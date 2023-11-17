@@ -12,9 +12,13 @@ export default function Home() {
           <p className="text-black text-xl font-normal capitalize mt-12">
             Explore many different collections from all our allies brands!
           </p>
-          <a href="/products" className="bg-blue-400 flex flex-row text-lg font-medium rounded-lg w-1/2 p-4 mt-12 justify-center hover:text-white hover:bg-blue-500">
-          <HiShoppingBag className="mt-1 mr-2" />
-                      Shop Now</a>
+          <a
+            href="/products"
+            className="bg-blue-400 flex flex-row text-lg font-medium rounded-lg w-1/2 p-4 mt-12 justify-center hover:text-white hover:bg-blue-500"
+          >
+            <HiShoppingBag className="mt-1 mr-2" />
+            Shop Now
+          </a>
         </div>
 
         <Image
@@ -24,6 +28,40 @@ export default function Home() {
           width={350}
           alt=""
         />
+      </section>
+
+      <section className="flex flex-wrap justify-center py-2 mx-24 my-16">
+        <div className="grid grid-cols-5 grid-rows-1 gap-6">
+          <div>
+            <a href="#">
+              <Image src="/brand/brand-1.png" height={50} width={240} alt="" />
+            </a>
+          </div>
+
+          <div>
+            <a href="#">
+              <Image src="/brand/brand-2.png" height={50} width={240} alt="" />
+            </a>
+          </div>
+
+          <div>
+            <a href="#">
+              <Image src="/brand/03.png" height={50} width={240} alt="" />
+            </a>
+          </div>
+
+          <div>
+            <a href="#">
+              <Image src="/brand/brand-4.png" height={50} width={240} alt="" />
+            </a>
+          </div>
+
+          <div>
+            <a href="#">
+              <Image src="/brand/brand-5.png" height={50} width={250} alt="" />
+            </a>
+          </div>
+        </div>
       </section>
 
       <section>
