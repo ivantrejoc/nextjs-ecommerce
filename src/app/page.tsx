@@ -4,7 +4,7 @@ import { HiShoppingBag } from "react-icons/hi2";
 export default function Home() {
   return (
     <main>
-      <section className="flex flex-wrap justify-center py-2 mx-24 mt-12">
+      <section title="collections" className="flex flex-wrap justify-center py-2 mx-24 mt-12">
         <div className="w-1/4 px-6 mr-36">
           <h3 className="text-black text-6xl font-light capitalize mt-24">
             Collections

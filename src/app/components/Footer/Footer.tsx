@@ -3,22 +3,21 @@ import { LiaArrowUpSolid } from "react-icons/lia";
 
 const Footer = () => {
   return (
-    <footer className="w-full items-center">
-      <div className="bg-purple-300 h-42 mt-24 grid grid-cols-3 sm:grid-cols-4 grid-rows-1 gap-8 sm:gap-6 py-6 px-12 place-items-center place-content-center">
-        <div className=" mx-24 p-0">
+    <footer className="w-full items-center mt-24 ">
+      <div className="bg-purple-300 h-36 grid grid-cols-3 sm:grid-cols-4 grid-rows-1 gap-8 sm:gap-6 py-6 px-12 place-items-center place-content-center">
+        <div className="flex flex-col h-36 w-40 mx-24 p-0">
         <a href="/">
         <Image
           className="m-3"
           src="/Buime-transparent.png"
           height={50}
-                    width={50}
+                    width={30}
           alt="buime logo"
         />
         </a>
       
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua
+          <p className="h-24 w-36 mx-3 font-light text-xs text-start">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <a href="#">
@@ -148,7 +147,7 @@ const Footer = () => {
             alt="master card logo"
           />
         </div>
-        <a href="/" className="flex flex-row align-middle top-0">
+        <a href="#" className="flex flex-row align-middle top-0">
         <LiaArrowUpSolid className="mt-1"/>
         <p className="font-medium text-md text-black dark:text-gray-300 hover:underline pl-1">Scroll to top
         </p>
