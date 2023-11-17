@@ -4,8 +4,8 @@ import { LiaArrowUpSolid } from "react-icons/lia";
 const Footer = () => {
   return (
     <footer className="w-full items-center">
-      <div className="bg-purple-300 h-42 mt-24 grid grid-cols-3 sm:grid-cols-4 grid-rows-1 gap-8 sm:gap-6 py-6 px-12 place-items-center">
-        <div className=" ml-12">
+      <div className="bg-purple-300 h-42 mt-24 grid grid-cols-3 sm:grid-cols-4 grid-rows-1 gap-8 sm:gap-6 py-6 px-12 place-items-center place-content-center">
+        <div className=" mx-24 p-0">
         <a href="/">
         <Image
           className="m-3"
