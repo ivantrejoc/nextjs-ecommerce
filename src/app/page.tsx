@@ -4,7 +4,10 @@ import { HiShoppingBag } from "react-icons/hi2";
 export default function Home() {
   return (
     <main>
-      <section title="collections" className="flex flex-wrap justify-center py-2 mx-24 mt-12">
+      <section
+        title="collections"
+        className="flex flex-wrap justify-center py-2 mx-24 mt-12"
+      >
         <div className="w-1/4 px-6 mr-36">
           <h3 className="text-black text-6xl font-light capitalize mt-24">
             Collections
@@ -14,7 +17,7 @@ export default function Home() {
           </p>
           <a
             href="/products"
-            className="bg-blue-400 flex flex-row text-lg font-medium rounded-lg w-3/4 p-2 mt-12 justify-center hover:text-white hover:bg-blue-500"
+            className="bg-blue-400 flex flex-row text-sm font-medium rounded-lg w-1/2 p-2 mt-12 justify-center hover:text-white hover:bg-blue-500"
           >
             <HiShoppingBag className="mt-1 mr-2" />
             Shop Now
@@ -64,6 +67,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-black w-3/5 flex flex-row justify-center mx-auto my-16 p-0">
+        <Image
+          src="/images/andrey-zvyagintsev-e-qj-1-z-mpq-vm-unsplash-1.png"
+          width={550}
+          height={0}
+          alt="Andrey Zvyagintsev"
+        />
+        <div className="bg-black w-1/3 py-4">
+          <Image
+            src="/images/px-zara-logo-2.png"
+            width={150}
+            height={50}
+            alt="Andrey Zvyagintsev"
+          />
+          <p className="text-white capitalize leading-10 my-3">
+            Lustrous yet understated. The new evening wear collection
+            exclusively offered at the reopened Giorgio Armani boutique in Los
+            Angeles.
+          </p>
+          <a
+            href="/products"
+            className="bg-gray-200 flex flex-row text-xs font-medium rounded-lg w-1/3 p-2 mt-6 justify-center hover:text-white hover:bg-blue-500"
+          >See Collection</a>
+        </div>
+      </section>
+
       <section>
         <div className="flex items-center justify-center py-4 md:py-8 flex-wrap">
           <button
@@ -98,79 +127,77 @@ export default function Home() {
           </button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 place-content-center justify-items-center x-24 p-6 mx-36">
-          
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-         
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-         
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-          
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-         
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-          
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-         
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-          
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-         
-            <Image
-              className="h-auto max-w-full rounded-lg"
-              src="/models-images/image-product-1.png"
-              width={100}
-              height={100}
-              alt=""
-            />
-          
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
+
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
+
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
+
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
+
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
+
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
+
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
+
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
+
+          <Image
+            className="h-auto max-w-full rounded-lg"
+            src="/models-images/image-product-1.png"
+            width={100}
+            height={100}
+            alt=""
+          />
         </div>
       </section>
     </main>
