@@ -6,16 +6,16 @@ const Footer = () => {
     <footer className="w-full items-center mt-24 ">
       <div className="bg-purple-300 h-36 grid grid-cols-3 sm:grid-cols-4 grid-rows-1 gap-8 sm:gap-6 py-10 px-12 place-items-center place-content-center">
         <div className="flex flex-col h-36 w-40 mx-24 p-0">
-        <a href="/">
-        <Image
-          className="m-3"
-          src="/Buime-transparent.png"
-          height={50}
-                    width={30}
-          alt="buime logo"
-        />
-        </a>
-      
+          <a href="/">
+            <Image
+              className="m-3"
+              src="/Buime-transparent.png"
+              height={50}
+              width={30}
+              alt="buime logo"
+            />
+          </a>
+
           <p className="h-24 w-36 mx-3 font-light text-xs text-start">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
@@ -148,9 +148,10 @@ const Footer = () => {
           />
         </div>
         <a href="#" className="flex flex-row align-middle top-0">
-        <LiaArrowUpSolid className="mt-1"/>
-        <p className="font-medium text-md text-black dark:text-gray-300 hover:underline pl-1">Scroll to top
-        </p>
+          <LiaArrowUpSolid className="mt-1" />
+          <p className="font-medium text-md text-black dark:text-gray-300 hover:underline pl-1">
+            Scroll to top
+          </p>
         </a>
       </div>
     </footer>

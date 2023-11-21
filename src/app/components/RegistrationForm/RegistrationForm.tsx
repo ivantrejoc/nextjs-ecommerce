@@ -1,13 +1,57 @@
-import React from 'react'
+"use client";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from 'zod';
+import { auth } from "../../../../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "next/navigation";
+
+const RegisterSchema = z
+  .object({
+    email: z.string().email("Invalid email").min(1, "Email is required"),
+    password: z
+      .string()
+      .regex(
+        new RegExp(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/),
+        "Password must have one digit, at least one lowercase, at least one uppercase"
+      )
+      .min(8, "Password is too short")
+      .max(16, "Password is too long"),
+    confirmPassword: z.string().min(1, "Password confirm is required"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    path: ["confirmPassword"],
+    message: "Password do not match",
+  });
 
 const RegistrationForm = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm<z.infer<typeof RegisterSchema>>({
+        resolver: zodResolver(RegisterSchema),
+      });
+
+      const router = useRouter();
+
+const createUser =async (values:z.infer<typeof RegisterSchema>) => {
+    try {
+        await createUserWithEmailAndPassword(auth, values.email, values.password);
+        alert("User created")
+        router.push("/");
+    } catch (error) {
+        alert(error);
+    }
+}
+
   return (
     <div className="py-6">
-  <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+  <form onSubmit={handleSubmit(createUser)}className="flex bg-white border-gray-400 rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div className="hidden lg:block lg:w-1/2 bg-green-300"></div>
         <div className="w-full p-8 lg:w-1/2">
             <h2 className="text-2xl font-semibold text-gray-700 text-center">Brand</h2>
-            <p className="text-xl text-gray-600 text-center">Welcome!</p>
+            <p className="text-xl text-center">Welcome!</p>
             <a href="#" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
                 <div className="px-4 py-3">
                     <svg className="h-6 w-6" viewBox="0 0 40 40">
@@ -17,7 +61,7 @@ const RegistrationForm = () => {
                         <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#1976D2"/>
                     </svg>
                 </div>
-                <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Sign up with Google</h1>
+                <h1 className="px-4 py-3 w-5/6 text-black text-center">Sign up with Google</h1>
             </a>
             <div className="mt-4 flex items-center justify-between">
                 <span className="border-b w-1/5 lg:w-1/4"></span>
@@ -25,25 +69,28 @@ const RegistrationForm = () => {
                 <span className="border-b w-1/5 lg:w-1/4"></span>
             </div>
             <div className="mt-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email"/>
+                <label className="block text-black text-sm font-semibold mb-2">Email</label>
+                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="text" {...register("email")}/>
+                {errors?.email?.message && <p className="text-xs text-gray-800">{errors.email.message}</p>}
             </div>
             <div className="mt-4">
                 <div className="flex justify-between">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                    <label className="block text-black text-sm font-semibold mb-2">Password</label>
                     
                 </div>
-                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password"/>
+                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" {...register("password")}/>
+                {errors?.password?.message && <p className="text-xs text-gray-800">{errors.password.message}</p>}
             </div>
             <div className="mt-4">
                 <div className="flex justify-between">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
+                    <label className="block text-black text-sm font-semibold mb-2">Confirm Password</label>
                     
                 </div>
-                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password"/>
+                <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" {...register("confirmPassword")}/>
+                {errors?.confirmPassword?.message && <p className="text-xs text-gray-800">{errors.confirmPassword.message}</p>}
             </div>
             <div className="mt-8">
-                <button className="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Register</button>
+                <button type='submit' className="bg-black text-white font-semibold py-2 px-4 w-full rounded hover:bg-gray-800">Register</button>
             </div>
             <div className="mt-4 flex items-center justify-between">
                 <span className="border-b w-1/5 md:w-1/4"></span>
@@ -51,7 +98,7 @@ const RegistrationForm = () => {
                 <span className="border-b w-1/5 md:w-1/4"></span>
             </div>
         </div>
-    </div>
+    </form>
 </div>
   )
 }
