@@ -1,9 +1,18 @@
+import { getProducts } from "../api/products/services";
+import Card from "../components/Card/Card";
 
-const Products = () => {
+
+async function fetchProducts() { 
+  return await getProducts(); //EJECUTAMOS EL FETCH DE SERVICES
+}
+
+const Products = async () => {
+
+  const products = await fetchProducts();
   return (
-    <div>
-      <h1>Esta es la vista de Productos</h1>
-    </div>
+    <main>
+      {products.map((product)=> (<Card key={product.id} data={product}/>))}
+    </main>
   );
 };
 
