@@ -6,7 +6,11 @@ export const getProducts = async (): Promise<Product[]> => {
   const apiProducts = await fetch(URL);
   const data = await apiProducts.json();
   return data;
-  //   const cleanData = data.results;
-  //   console.log(cleanData);
-  //   return cleanData;
+};
+
+export const getProductById = async (id: Product): Promise<Product> => {
+  const URL = `https://fakestoreapi.com/products/${id}`;
+  const apiProduct = await fetch(URL);
+  const data = await apiProduct.json();
+  return data;
 };

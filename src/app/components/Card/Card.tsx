@@ -22,7 +22,7 @@ interface Props {
 const Card = ({ data }: Props) => {
   return (
     <div className="w-full h-full max-w-sm mx-h-96 bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
+      <a href={`/products/${data.id}`}>
         <Image
           className="p-8 rounded-t-lg max-h-56 max-w mx-12 mb-3 content-center"
           width={20/10}
@@ -100,9 +100,8 @@ const Card = ({ data }: Props) => {
             {data.price}
           </span>
           <a
-            href="#"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
+            href="/cart"
+            className=" bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" >
             Add to cart
           </a>
         </div>
