@@ -20,6 +20,8 @@ interface Props {
 }
 
 const Card = ({ data }: Props) => {
+  
+
   return (
     <div className="w-full h-full max-w-sm mx-h-96 bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href={`/products/${data.id}`}>

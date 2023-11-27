@@ -26,11 +26,14 @@ const Header = () => {
             />
           </a>
           
-          <div className="ml-auto my-10 py-2 px-auto pr-6 mr-6 h-12 content-center justify-between align-baseline">
+          <div className="w-full h-full ml-auto my-10 py-2 px-auto pr-6 mr-6  lg:max-w-full md:justify-end ">
             <p className="ml-6">Hello, {session.user?.email}</p>
+            <div className="flex flex-row my-3">
             <AccountButton />
             <ShoppingButton />
             <LogOutButton />
+            </div>
+            
           </div>
         </div>
         <NavBar />

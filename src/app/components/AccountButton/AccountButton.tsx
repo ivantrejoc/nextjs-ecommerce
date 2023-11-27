@@ -3,13 +3,13 @@ import { HiMiniUser } from "react-icons/hi2";
 
 const AccountButton = () => {
   return (
-    <div className="inline-flex justify-between px-6">
+    <div className="inline-flex justify-between px-3">
       <a
         href="/login"
         className="inline-flex items-center "
       >
         <HiMiniUser />
-        <p className="font-medium text-xl text-black dark:text-gray-300 hover:underline pl-1">Account</p>
+        <p className="font-medium text-md text-black dark:text-gray-300 hover:underline pl-1">Account</p>
       </a>
     </div>
   );
