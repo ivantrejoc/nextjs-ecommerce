@@ -9,7 +9,7 @@ const LogOutButton = () => {
             className="inline-flex items-center "
           >
             <IoLogOut />
-            <p className="font-medium text-md text-black dark:text-gray-300 hover:underline pl-1">Log Out</p>
+            <p className="font-medium text-sm text-black dark:text-gray-300 hover:underline pl-1">Logout</p>
           </button>
         </div>
   )

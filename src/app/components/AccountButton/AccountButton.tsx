@@ -9,7 +9,7 @@ const AccountButton = () => {
         className="inline-flex items-center "
       >
         <HiMiniUser />
-        <p className="font-medium text-md text-black dark:text-gray-300 hover:underline pl-1">Account</p>
+        <p className="font-medium text-sm text-black dark:text-gray-300 hover:underline pl-1">Account</p>
       </a>
     </div>
   );

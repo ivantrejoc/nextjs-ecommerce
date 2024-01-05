@@ -4,8 +4,9 @@ import { NavBar } from "../NavBar";
 import { AccountButton } from "../AccountButton/";
 import { ShoppingButton } from "../ShoppingButton/";
 import { LogOutButton } from "../LogOutButton";
-import Image from "next/image";
+import { ShoppingCartButton } from "../ShoppingCartButton/";
 import { SearchBar } from "../SearchBar/";
+import Image from "next/image";
 import { useSession } from "next-auth/react";
 
 const Header = () => {
@@ -13,8 +14,8 @@ const Header = () => {
   console.log({ session, status });
   if (session) {
     return (
-      <header className="w-full h-48 flex-col px-2 justify-center items-center gap-[30px] inline-flex">
-        <div className="w-full h-36 top-0 absolute grid grid-cols-3 grid-rows-1 gap-20">
+      <header className="w-full h-48 flex-col justify-center items-center gap-[30px] inline-flex">
+        <div className="w-full h-36 top-0 absolute grid grid-cols-3 grid-rows-1 gap-12">
           <SearchBar />
           <a href="/">
             <Image
@@ -25,15 +26,15 @@ const Header = () => {
               alt="buime logo"
             />
           </a>
-          
-          <div className="w-full h-full ml-auto my-10 py-2 px-auto pr-6 mr-6  lg:max-w-full md:justify-end ">
+
+          <div className="w-full h-full my-10 lg:max-w-full lg:justify-end md:justify-end ">
             <p className="ml-6">Hello, {session.user?.email}</p>
-            <div className="flex flex-row my-3">
-            <AccountButton />
-            <ShoppingButton />
-            <LogOutButton />
+            <div className="flex flex-row justify-items-end">
+              <AccountButton />
+              <ShoppingButton />
+              <ShoppingCartButton />
+              <LogOutButton />
             </div>
-            
           </div>
         </div>
         <NavBar />

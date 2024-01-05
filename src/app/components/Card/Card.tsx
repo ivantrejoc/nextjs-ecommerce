@@ -20,15 +20,13 @@ interface Props {
 }
 
 const Card = ({ data }: Props) => {
-  
-
   return (
     <div className="w-full h-full max-w-sm mx-h-96 bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href={`/products/${data.id}`}>
         <Image
           className="p-8 rounded-t-lg max-h-56 max-w mx-12 mb-3 content-center"
-          width={20/10}
-          height={20/10}
+          width={20 / 10}
+          height={20 / 10}
           sizes="100vw"
           style={{
             width: "80%",
@@ -97,13 +95,14 @@ const Card = ({ data }: Props) => {
             5.0
           </span>
         </div>
-        <div className= "flex items-center justify-between mt-6 mb-0 h-1/4">
+        <div className="flex items-center justify-between mt-6 mb-0 h-1/4">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
             {data.price}
           </span>
           <a
             href="/cart"
-            className=" bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" >
+            className=" bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          >
             Add to cart
           </a>
         </div>

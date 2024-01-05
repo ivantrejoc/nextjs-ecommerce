@@ -6,10 +6,14 @@ interface Props {
 }
 
 interface ShoppingCartContext {
+  openCart: () => void;
+  closeCart: () => void;
   getProductQuantity: (id: number) => number;
   increaseProductQuantity: (id: number) => void;
   decreaseProductQuantity: (id: number) => void;
   removeProduct: (id: number) => void;
+  cartQuantity: number;
+  cartItems: CartItem[];
 }
 
 interface CartItem {
@@ -19,12 +23,17 @@ interface CartItem {
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
 
-const useShoppingCart = () => {
+export const useShoppingCart = () => {
   return useContext(ShoppingCartContext);
 };
 
-const ShoppingCartProvider = ({ children }: Props) => {
+export const ShoppingCartProvider = ({ children }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  const openCart = () => setIsOpen(true);
+
+  const closeCart = () => setIsOpen(false);
 
   const getProductQuantity = (id: number) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -68,18 +77,25 @@ const ShoppingCartProvider = ({ children }: Props) => {
     });
   };
 
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
+
   return (
     <ShoppingCartContext.Provider
       value={{
+        openCart,
+        closeCart,
         getProductQuantity,
         increaseProductQuantity,
         decreaseProductQuantity,
-        removeProduct
+        removeProduct,
+        cartQuantity,
+        cartItems
       }}
     >
       {children}
     </ShoppingCartContext.Provider>
   );
 };
-
-export { useShoppingCart, ShoppingCartProvider };
