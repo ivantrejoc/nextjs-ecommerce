@@ -1,4 +1,4 @@
-// "use client"
+"use client";
 import Image from "next/image";
 import { HiShoppingBag } from "react-icons/hi2";
 import { ProductGrid } from "./components/ProductGrid";

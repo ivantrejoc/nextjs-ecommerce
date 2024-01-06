@@ -1,5 +1,5 @@
 // lógica de peticiones a una api según clean architecture
-import { Product } from "../models"; //import viene del barrel
+import { Product } from "../../models"; //import viene del barrel
 
 export const getProducts = async (): Promise<Product[]> => {
   const URL = "https://fakestoreapi.com/products";
@@ -14,3 +14,4 @@ export const getProductById = async (id: Product): Promise<Product> => {
   const data = await apiProduct.json();
   return data;
 };
+
