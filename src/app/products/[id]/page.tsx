@@ -1,5 +1,5 @@
+import { getProductById } from "@/app/api/products/services/product.services";
 import { Product } from "../../api/products/models";
-import { getProductById } from "../../api/products/services";
 import CardDetail from "../../components/CardDetail/CardDetail";
 
 async function fetchProductsById(id: Product) {
