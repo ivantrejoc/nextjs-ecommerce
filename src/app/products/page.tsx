@@ -1,4 +1,5 @@
-import { getProducts } from "../api/products/services";
+
+import { getProducts } from "../api/products/services/product.services";
 import Card from "../components/Card/Card";
 
 async function fetchProducts() {
