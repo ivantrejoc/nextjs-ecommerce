@@ -15,3 +15,11 @@ export const getProductById = async (id: Product): Promise<Product> => {
   return data;
 };
 
+export const getProductsByCategory = async (category: Product): Promise<Product[]> => {
+  const URL = `https://fakestoreapi.com/products/category/${category}`;
+  const apiProduct = await fetch(URL);
+  const data = await apiProduct.json();
+  return data;
+};
+
+

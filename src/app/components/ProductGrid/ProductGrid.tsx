@@ -17,7 +17,6 @@ const ProductGrid = () => {
     }
     async function fetchCategories() {
       const categoriesData = await getCategories();
-      // const categoriesButtons = categoriesData.unshift("All categories")
       setCategories(categoriesData);
     }
     fetchProducts();
@@ -59,7 +58,7 @@ const ProductGrid = () => {
               src={product.image}
               width={100}
               height={100}
-              alt={product.title}
+              alt=""
             />
           </Link>
         ))}
