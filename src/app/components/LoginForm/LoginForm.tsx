@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const SignInSchema = z.object({
   email: z.string().email("Invalid email").min(1, "Email is required"),
@@ -52,10 +53,17 @@ const LoginForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex bg-white border-gray-400 rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl"
       >
-        <div className="hidden lg:block lg:w-1/2 bg-green-300"></div>
+        <div className="hidden lg:block lg:w-1/2">
+          <Image
+            alt={"image"}
+            src={"/models-images/engin-akyurt-jaZoffxg1yc-unsplash%201.png"}
+            width={500}
+            height={1500}
+          />
+        </div>
         <div className="w-full p-8 lg:w-1/2">
           <h2 className="text-2xl font-semibold text-gray-700 text-center">
-            Brand
+            Buime
           </h2>
           <p className="text-xl text-center">Welcome again!</p>
           <a

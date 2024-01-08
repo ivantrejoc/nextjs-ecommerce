@@ -5,6 +5,7 @@ import * as z from 'zod';
 import { auth } from "../../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const RegisterSchema = z
   .object({
@@ -48,9 +49,16 @@ const createUser =async (values:z.infer<typeof RegisterSchema>) => {
   return (
     <div className="py-6">
   <form onSubmit={handleSubmit(createUser)}className="flex bg-white border-gray-400 rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
-        <div className="hidden lg:block lg:w-1/2 bg-green-300"></div>
+        <div className="hidden lg:block lg:w-1/2 bg-gray-200">
+        <Image
+            alt={"image"}
+            src={"/models-images/pngwing.com (6).png"}
+            width={800}
+            height={200}
+          />
+        </div>
         <div className="w-full p-8 lg:w-1/2">
-            <h2 className="text-2xl font-semibold text-gray-700 text-center">Brand</h2>
+            <h2 className="text-2xl font-semibold text-gray-700 text-center">Buime</h2>
             <p className="text-xl text-center">Welcome!</p>
             <a href="#" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
                 <div className="px-4 py-3">
