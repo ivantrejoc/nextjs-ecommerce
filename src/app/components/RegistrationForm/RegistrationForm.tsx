@@ -49,11 +49,11 @@ const createUser =async (values:z.infer<typeof RegisterSchema>) => {
   return (
     <div className="py-6">
   <form onSubmit={handleSubmit(createUser)}className="flex bg-white border-gray-400 rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
-        <div className="hidden lg:block lg:w-1/2 bg-gray-200">
-        <Image
+        <div className="flex flex-col justify-items-center lg:block lg:w-1/2 bg-gray-200">
+        <Image className="mx-auto"
             alt={"image"}
             src={"/models-images/pngwing.com (6).png"}
-            width={800}
+            width={250}
             height={200}
           />
         </div>
