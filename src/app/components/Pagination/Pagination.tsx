@@ -37,7 +37,7 @@ const Pagination = ({
         {pageNumbers?.map((number) => (
           <li key={number}>
             <button
-              className={`relative block rounded bg-transparent px-3 py-1.5 text-base text-gray-500 transition-all duration-300 hover:bg-neutral-200  dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white ${
+              className={`relative block rounded bg-transparent px-3 py-1.5 text-base text-neutral-600 transition-all duration-300 hover:bg-neutral-200  dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white ${
                 currentPage === number
                   ? " text-gray-900 bg-gray-300 focus:bg-gray-300 focus-within:bg-gray-300 dark:focus:bg-gray-100 dark:focus-within:bg-gray-100"
                   : ""
