@@ -1,45 +1,74 @@
 "use client";
-import { createContext, useContext, useState } from "react";
 
-interface Props {
-  children: React.ReactNode;
-}
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState
+} from "react";
 
-interface ShoppingCartContext {
-  openCart: () => void;
-  closeCart: () => void;
-  getProductQuantity: (id: number) => number;
-  increaseProductQuantity: (id: number) => void;
-  decreaseProductQuantity: (id: number) => void;
-  removeProduct: (id: number) => void;
-  cartQuantity: number;
-  cartItems: CartItem[];
-}
-
-interface CartItem {
-  id: number;
-  quantity: number;
-}
-
-const ShoppingCartContext = createContext({} as ShoppingCartContext);
-
-export const useShoppingCart = () => {
-  return useContext(ShoppingCartContext);
+type CartProviderProps = {
+  children: ReactNode;
 };
 
-export const ShoppingCartProvider = ({ children }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+type CartContext = {
+  openCart: () => void;
+  closeCart: () => void;
+  getItemQuant: (id: number) => number;
+  increaseItem: (id: number) => void;
+  decreaseItem: (id: number) => void;
+  deleteItem: (id: number) => void;
+  cartQuantity: number;
+  cartItems: CartItem[];
+  isOpen: boolean;
+};
 
-  const openCart = () => setIsOpen(true);
+type CartItem = {
+  id: number;
+  quantity: number;
+};
 
-  const closeCart = () => setIsOpen(false);
+const CartContext = createContext({} as CartContext);
 
-  const getProductQuantity = (id: number) => {
+export function useCart() {
+  return useContext(CartContext);
+}
+
+export function CartProvider({ children }: CartProviderProps) {
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const localCartItems = localStorage.getItem("cartItems");
+    const parsedCartItems = localCartItems ? JSON.parse(localCartItems) : [];
+    console.log("ITEMS EN localStorage: ", parsedCartItems);
+    return parsedCartItems;
+  });
+  const [isOpen, setIsOpen] = useState(() => {
+    const localIsOpen = localStorage.getItem("isOpen");
+    const parsedIsOpen = localIsOpen ? JSON.parse(localIsOpen) : [];
+    console.log("ESTADO DE isOpen EN localStorage: ", parsedIsOpen);
+    return parsedIsOpen;
+  });
+
+  //Almacenar cambios cartItems e isOpen en localStorage:
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+    localStorage.setItem("isOpen", JSON.stringify(isOpen));
+  });
+
+  //Obtener cantidad de elementos en el carrito:
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
+
+  //Obtener cantidad de un producto en carrito:
+  const getItemQuant = (id: number) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   };
 
-  const increaseProductQuantity = (id: number) => {
+  //Agregar al carrito:
+  const increaseItem = (id: number) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
         return [...currItems, { id, quantity: 1 }];
@@ -55,7 +84,8 @@ export const ShoppingCartProvider = ({ children }: Props) => {
     });
   };
 
-  const decreaseProductQuantity = (id: number) => {
+  //Reducir cant de un prod en carrito:
+  const decreaseItem = (id: number) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id)?.quantity === 1) {
         return currItems.filter((item) => item.id !== id);
@@ -71,31 +101,34 @@ export const ShoppingCartProvider = ({ children }: Props) => {
     });
   };
 
-  const removeProduct = (id: number) => {
+  //Eliminar elementos del carrito:
+  const deleteItem = (id: number) => {
     setCartItems((currItems) => {
       return currItems.filter((item) => item.id !== id);
     });
   };
 
-  const cartQuantity = cartItems.reduce(
-    (quantity, item) => item.quantity + quantity,
-    0
-  );
+  //Abrir carrito:
+  const openCart = () => setIsOpen(true);
+
+  //Cerrar carrito
+  const closeCart = () => setIsOpen(false);
 
   return (
-    <ShoppingCartContext.Provider
+    <CartContext.Provider
       value={{
+        getItemQuant,
+        increaseItem,
+        decreaseItem,
+        deleteItem,
         openCart,
         closeCart,
-        getProductQuantity,
-        increaseProductQuantity,
-        decreaseProductQuantity,
-        removeProduct,
         cartQuantity,
-        cartItems
+        cartItems,
+        isOpen
       }}
     >
       {children}
-    </ShoppingCartContext.Provider>
+    </CartContext.Provider>
   );
-};
+}

@@ -97,13 +97,13 @@ const Card = ({ data }: Props) => {
         </div>
         <div className="flex items-center justify-between mt-6 mb-0 h-1/4">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
-            {data.price}
+            ${data.price.toFixed(2)}
           </span>
           <a
             href="/cart"
             className=" bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
-            Add to cart
+            Buy now!
           </a>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-import { SessionAuthProvider, ShoppingCartProvider } from "@/context";
+import { CartProvider, SessionAuthProvider } from "@/context";
 
 const monsterrat = Montserrat({
   subsets: ["latin"],
@@ -26,12 +26,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={monsterrat.className}>
         <SessionAuthProvider>
-          <ShoppingCartProvider>
-            <Header />
-            {children}
-          </ShoppingCartProvider>
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
         </SessionAuthProvider>
-        <Footer />
+        
       </body>
     </html>
   );

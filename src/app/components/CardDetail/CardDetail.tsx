@@ -1,5 +1,5 @@
-"use client"
-import { useShoppingCart } from "@/context";
+"use client";
+import { useCart } from "@/context";
 import Image from "next/image";
 
 export interface CardDetail {
@@ -24,14 +24,15 @@ interface Props {
 const CardDetail = ({ data }: Props) => {
   
   const {
-    getProductQuantity,
-    increaseProductQuantity,
-    decreaseProductQuantity,
-    removeProduct
-  } = useShoppingCart();
+    getItemQuant,
+        increaseItem, 
+        decreaseItem,
+        deleteItem
+  } = useCart();
 
-  const quantity = getProductQuantity(data.id);
-
+  const quantity = getItemQuant(data.id);
+  
+ 
   return (
     <div className="bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
       <div className="flex flex-row md:flex-row px-4 h-full">
@@ -72,14 +73,14 @@ const CardDetail = ({ data }: Props) => {
 
           <div className="flex py-4 space-x-4">
             <div className="flex items-center border-gray-100">
-              <button className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={()=> decreaseProductQuantity(data.id)} >
+              <button className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={()=> decreaseItem(data.id)} >
                 {" "}
                 -{" "}
               </button>
               <span className="h-8 w-8 p-2 border bg-white text-center text-xs outline-none">
                 {quantity}
               </span>
-              <button className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={()=> increaseProductQuantity(data.id)}>
+              <button className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={()=> increaseItem(data.id)}>
                 {" "}
                 +{" "}
               </button>
@@ -87,7 +88,7 @@ const CardDetail = ({ data }: Props) => {
 
             <button
               type="button"
-              className=" bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" onClick={()=> increaseProductQuantity(data.id)}
+              className=" bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" onClick={()=> increaseItem(data.id)}
             >
               Add to Cart
             </button>

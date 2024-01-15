@@ -6,6 +6,7 @@ const Footer = () => {
     <footer className="w-full items-center mt-24 ">
       <div className="bg-purple-300 h-36 grid grid-cols-3 sm:grid-cols-4 grid-rows-1 gap-8 sm:gap-6 py-10 px-12 place-items-center place-content-center">
         <div className="flex flex-col h-36 w-40 mx-24 p-0">
+          <div className="flex flex-col">
           <a href="/">
             <Image
               className="m-3"
@@ -15,11 +16,12 @@ const Footer = () => {
               alt="buime logo"
             />
           </a>
-
-          <p className="h-24 w-36 mx-3 font-light text-xs text-start">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          <a href="https://ivantrejo.vercel.app/" className="hover:underline">
+          <p className="h-12 w-36 mx-3 font-light text-xs text-start">
+            Made with love and loads of coffee by Ivan Trejo. 
           </p>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
+          </a>
+          <div className="flex mt-0 sm:justify-center sm:mt-0">
             <a href="#">
               <Image
                 className="m-2"
@@ -41,6 +43,8 @@ const Footer = () => {
               <span className="sr-only"></span>
             </a>
           </div>
+          </div>         
+          
         </div>
         <div className=" p-0">
           <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
@@ -48,18 +52,18 @@ const Footer = () => {
           </h2>
           <ul className="text-gray-800 dark:text-gray-400 font-medium">
             <li className="mb-2">
-              <a href="https://flowbite.com/" className="hover:underline">
-                Flowbite
+              <a href="#" className="hover:underline">
+                Jewlery
               </a>
             </li>
             <li className="mb-2">
-              <a href="https://tailwindcss.com/" className="hover:underline">
-                Tailwind CSS
+              <a href="#" className="hover:underline">
+                Mens´s Clothing
               </a>
             </li>
             <li className="mb-2">
-              <a href="https://tailwindcss.com/" className="hover:underline">
-                Tailwind CSS
+              <a href="#" className="hover:underline">
+                Women´s Clothing
               </a>
             </li>
           </ul>
@@ -70,18 +74,18 @@ const Footer = () => {
           </h2>
           <ul className="text-gray-800 dark:text-gray-400 font-medium">
             <li className="mb-2">
-              <a href="https://flowbite.com/" className="hover:underline">
-                Flowbite
+              <a href="#" className="hover:underline">
+                History
               </a>
             </li>
             <li className="mb-2">
-              <a href="https://tailwindcss.com/" className="hover:underline">
-                Tailwind CSS
+              <a href="#" className="hover:underline">
+                Brands
               </a>
             </li>
             <li className="mb-2">
-              <a href="https://tailwindcss.com/" className="hover:underline">
-                Tailwind CSS
+              <a href="#" className="hover:underline">
+                Products
               </a>
             </li>
           </ul>
@@ -92,18 +96,18 @@ const Footer = () => {
           </h2>
           <ul className="text-gray-800 dark:text-gray-400 font-medium">
             <li className="mb-2">
-              <a href="https://flowbite.com/" className="hover:underline">
-                Flowbite
+              <a href="#" className="hover:underline">
+                Contact us
               </a>
             </li>
             <li className="mb-2">
               <a href="https://tailwindcss.com/" className="hover:underline">
-                Tailwind CSS
+                Shipping Service
               </a>
             </li>
             <li className="mb-2">
               <a href="https://tailwindcss.com/" className="hover:underline">
-                Tailwind CSS
+                Fedelity 
               </a>
             </li>
           </ul>
