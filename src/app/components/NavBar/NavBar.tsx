@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 const NavBar = () => {
   const [categories, setCategories] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState("All categories");
 
   useEffect(() => {
     async function fetchCategories() {
@@ -13,11 +12,6 @@ const NavBar = () => {
     }
     fetchCategories();
   }, []);
-
-  //manejo de selección de categoría
-  const handleClickedCategory = (category: string) => {
-    setSelectedCategory(category);
-  };
 
   return (
     <div className="w-full h-12 left-0 mt-32 mb-0  absolute border bg-purple-300 border-gray-400">

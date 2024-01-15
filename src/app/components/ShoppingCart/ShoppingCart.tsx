@@ -1,18 +1,23 @@
-"use client";
 
-import { useShoppingCart } from "@/context";
-import { CartItem } from "../CartItem";
+import { useCart } from "@/context";
+import CartItem from "../CartItem/CartItem";
+
+
+
+
 
 const ShoppingCart = () => {
-  const { closeCart, cartItems } = useShoppingCart();
+  const { closeCart, cartItems } = useCart();
+
+ 
 
   return (
-    <div className="h-screen bg-gray-100 pt-20">
+    <div className="h-auto bg-gray-200 pt-20">
       <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
       <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
         <div className="rounded-lg md:w-2/3">
           {cartItems.map((item) => (
-            <CartItem key={item.id} {...item} />
+            <CartItem key={item.id} id ={item.id} quantity ={item.quantity} />
           ))}
         </div>
         {/* <!-- Sub total --> */}
