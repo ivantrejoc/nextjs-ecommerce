@@ -1,74 +1,89 @@
+"use client";
+import { Product } from "@/app/api/products/models";
+import { getProducts } from "@/app/api/products/services/product.services";
+import { useCart } from "@/context";
+import { useEffect, useState } from "react";
+import SummaryItem from "../SummaryItem/SummaryItem";
+
 const OrderSummary = () => {
+  const { closeCart, cartItems } = useCart();
+
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      const productsData = await getProducts();
+      setProducts(productsData);
+    }
+    fetchProducts();
+  }, []);
+
+
+
+  const orderSummary = cartItems.map((cartItem) => {
+    const item = products.find((e) => e.id === cartItem.id);
+    if (item) {
+      return {
+        title: item.title,
+        price: item.price,
+        image: item.image,
+        quantity: cartItem.quantity,
+        id: cartItem.id
+      };
+    }
+
+    return {
+      title: 'Producto no encontrado',
+      price: 0,
+      image: '',
+      quantity: 0
+    };
+  
+  });
+
+  console.log("ESTOS SON LOS ELEMENTOS DENTRO DEL CARRITO", orderSummary);
+
+  const subtotal = cartItems
+    .reduce((total, cartItem) => {
+      const item = products.find((e) => e.id === cartItem.id);
+      return total + (item?.price || 0) * cartItem.quantity;
+    }, 0)
+    .toFixed(2);
+
+  const taxes = 0;
+
+  const shipping = Number(subtotal) * 0.05;
+
+  const grandTotal = Number(subtotal) + shipping;
+
   return (
     <div className="col-span-1 bg-white lg:block hidden">
       <h1 className="py-6 border-b-2 text-xl text-gray-600 px-8">
         Order Summary
       </h1>
-      <ul className="py-6 border-b space-y-6 px-8">
-        <li className="grid grid-cols-6 gap-2 border-b-1">
-          <div className="col-span-1 self-center">
-            <img
-              src="https://bit.ly/3oW8yej"
-              alt="Product"
-              className="rounded w-full"
-            />
-          </div>
-          <div className="flex flex-col col-span-3 pt-2">
-            <span className="text-gray-600 text-md font-semi-bold">
-              Studio 2 Headphone
-            </span>
-            <span className="text-gray-400 text-sm inline-block pt-2">
-              Red Headphone
-            </span>
-          </div>
-          <div className="col-span-2 pt-3">
-            <div className="flex items-center space-x-2 text-sm justify-between">
-              <span className="text-gray-400">2 x €30.99</span>
-              <span className="text-pink-400 font-semibold inline-block">
-                €61.98
-              </span>
-            </div>
-          </div>
-        </li>
-        <li className="grid grid-cols-6 gap-2 border-b-1">
-          <div className="col-span-1 self-center">
-            <img
-              src="https://bit.ly/3lCyoSx"
-              alt="Product"
-              className="rounded w-full"
-            />
-          </div>
-          <div className="flex flex-col col-span-3 pt-2">
-            <span className="text-gray-600 text-md font-semi-bold">
-              Apple iPhone 13
-            </span>
-            <span className="text-gray-400 text-sm inline-block pt-2">
-              Phone
-            </span>
-          </div>
-          <div className="col-span-2 pt-3">
-            <div className="flex items-center space-x-2 text-sm justify-between">
-              <span className="text-gray-400">1 x €785</span>
-              <span className="text-pink-400 font-semibold inline-block">
-                €785
-              </span>
-            </div>
-          </div>
-        </li>
-      </ul>
+      {orderSummary.map((item) => (
+        <SummaryItem
+          key={item.id}
+          title={item.title}
+          price={item.price}
+          image={item.image}
+          quantity={item.quantity}
+        />
+      ))}
+
       <div className="px-8 border-b">
         <div className="flex justify-between py-4 text-gray-600">
           <span>Subtotal</span>
-          <span className="font-semibold text-pink-500">€846.98</span>
+          <span className="font-semibold text-pink-500">${subtotal}</span>
         </div>
         <div className="flex justify-between py-4 text-gray-600">
           <span>Shipping</span>
-          <span className="font-semibold text-pink-500">Free</span>
+          <span className="font-semibold text-pink-500">${shipping}</span>
         </div>
       </div>
       <div className="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
         <span>Total</span>
-        <span>€846.98</span>
+        <span>${grandTotal}</span>
       </div>
     </div>
   );

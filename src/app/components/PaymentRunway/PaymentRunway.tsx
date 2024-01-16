@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 
 const PaymentRunway = () => {
   return (
@@ -8,7 +8,11 @@ const PaymentRunway = () => {
         <div className="mb-5">
             <label htmlFor="type1" className="flex items-center cursor-pointer">
                 <input type="radio" className="form-radio h-5 w-5 text-indigo-500" name="type" id="type1" checked />
-                <img src="https://leadershipmemphis.org/wp-content/uploads/2020/08/780370.png" className="h-6 ml-3"/>
+                <Image src="/payments-methods.png" 
+                width ="160"
+                height="20"
+                alt="payment methods"
+                className="h-6 ml-3"/>
           </label>
         </div>
         <div>
@@ -70,7 +74,7 @@ const PaymentRunway = () => {
     <div className="w-full p-3">
         <label htmlFor="type2" className="flex items-center cursor-pointer">
             <input type="radio" className="form-radio h-5 w-5 text-indigo-500 " name="type" id="type2"/>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" width="80" className="ml-3" />
+            <Image src="/paypal.svg" alt="paypal" width="80" height="20" className="ml-3" />
         </label>
     </div>
 </div>

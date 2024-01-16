@@ -18,6 +18,8 @@ const ShoppingCart = () => {
     fetchProducts();
   }, []);
 
+  console.log("ESTOS SON LOS cartItems")
+
   const subtotal = cartItems
     .reduce((total, cartItem) => {
       const item = products.find((e) => e.id === cartItem.id);
