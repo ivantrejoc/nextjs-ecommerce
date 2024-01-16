@@ -1,3 +1,5 @@
+"use client";
+import { useCart } from "@/context";
 import Image from "next/image";
 
 export interface CardData {
@@ -20,6 +22,8 @@ interface Props {
 }
 
 const Card = ({ data }: Props) => {
+  const { increaseItem } = useCart();
+
   return (
     <div className="w-full h-full max-w-sm mx-h-96 bg-white border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href={`/products/${data.id}`}>
@@ -101,7 +105,7 @@ const Card = ({ data }: Props) => {
           </span>
           <a
             href="/cart"
-            className=" bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            className=" bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" onClick={()=> increaseItem(data.id)}
           >
             Buy now!
           </a>
