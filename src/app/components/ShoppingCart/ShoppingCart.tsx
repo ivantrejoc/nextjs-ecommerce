@@ -18,16 +18,18 @@ const ShoppingCart = () => {
     fetchProducts();
   }, []);
 
-  const subtotal = cartItems.reduce((total, cartItem) => {
-    const item = products.find((e) => e.id === cartItem.id);
-    return total + (item?.price || 0) * cartItem.quantity;
-  }, 0).toFixed(2);
+  const subtotal = cartItems
+    .reduce((total, cartItem) => {
+      const item = products.find((e) => e.id === cartItem.id);
+      return total + (item?.price || 0) * cartItem.quantity;
+    }, 0)
+    .toFixed(2);
 
   const taxes = 0;
 
-  const shipping = Number(subtotal) * 0.05;  
+  const shipping = Number(subtotal) * 0.05;
 
-  const grandTotal = Number(subtotal) + shipping
+  const grandTotal = Number(subtotal) + shipping;
 
   return (
     <div className="h-auto bg-gray-200 pt-20">
@@ -42,10 +44,7 @@ const ShoppingCart = () => {
         <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
           <div className="mb-2 flex justify-between">
             <p className="text-gray-700">Subtotal</p>
-            <p className="text-gray-700">
-              $
-              {subtotal}
-            </p>
+            <p className="text-gray-700">${subtotal}</p>
           </div>
           <div className="flex justify-between">
             <p className="text-gray-700">Shipping</p>
@@ -55,20 +54,24 @@ const ShoppingCart = () => {
           <div className="flex justify-between">
             <p className="text-lg font-bold">Total</p>
             <div className="flex flex-col items-end">
-              <p className="mb-1 text-lg font-bold justify-end">${grandTotal}</p>
+              <p className="mb-1 text-lg font-bold justify-end">
+                ${grandTotal}
+              </p>
               <p className="text-sm text-gray-700">including Taxes</p>
             </div>
           </div>
-          <button className="mt-6 w-full rounded-md   bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 py-1.5 font-medium text-black">
-            Check out
-          </button>
+          <div className="flex flex-col items-center">
+          <a href="/checkout" className="mt-6 w-2/4 rounded-md   bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 py-1.5 mx-auto px-auto font-medium text-black text-center">
+            Checkout
+          </a>
           <a
-          href="/"
+            href="/"
             className="font-medium text-sm text-black dark:text-gray-300 hover:underline pl-1"
-            
           >
             Exit
           </a>
+          </div>
+          
         </div>
       </div>
     </div>
