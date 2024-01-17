@@ -14,12 +14,12 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className="w-full h-12 left-0 mt-32 mb-0  absolute border bg-purple-300 border-gray-400">
-      <nav className="w-full px-10 pt-3 justify-between items-center inline-flex">
+    <div className="w-full sm:w-full h-12 left-0 mt-32 mb-0  absolute border bg-purple-300 border-gray-400">
+      <nav className="w-full lg:px-1 pt-3 flex gap:28 lg:gap-28 justify-center items-center">
         <Link
           key={"all categories"}
           href="/products"
-          className="text-black text-base font-normal capitalize leading-normal hover:underline"
+          className="text-black text-xs font-light lg:text-base lg:font-normal px-2 capitalize leading-normal hover:underline"
         >
           All Categories
         </Link>
@@ -28,7 +28,7 @@ const NavBar = () => {
           <Link
             key={category}
             href={`/products/categories/${category}`}
-            className="text-black text-base font-normal capitalize leading-normal hover:underline"
+            className="text-black text-xs font-light lg:text-base lg:font-normal px-2 capitalize leading-normal hover:underline"
           >
             {category}
           </Link>

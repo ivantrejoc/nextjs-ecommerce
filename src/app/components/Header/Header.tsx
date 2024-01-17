@@ -14,7 +14,7 @@ const Header = () => {
   console.log({ session, status });
   if (session) {
     return (
-      <header className="w-full h-48 flex-col justify-center items-center gap-[30px] inline-flex">
+      <header className="w-full lg:h-48 sm:h-12 flex justify-between items-center gap-[30px]">
         <div className="w-full h-36 top-0 absolute grid grid-cols-3 grid-rows-1 gap-12">
           <SearchBar />
           <a href="/">
