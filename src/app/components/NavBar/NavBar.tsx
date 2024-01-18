@@ -14,7 +14,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className="w-full sm:w-full h-12 left-0 mt-32 mb-0  absolute border bg-purple-300 border-gray-400">
+    <div className="w-full h-12 border bg-purple-300 border-gray-400">
       <nav className="w-full lg:px-1 pt-3 flex gap:28 lg:gap-28 justify-center items-center">
         <Link
           key={"all categories"}

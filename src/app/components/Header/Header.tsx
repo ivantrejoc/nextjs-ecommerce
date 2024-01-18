@@ -14,22 +14,27 @@ const Header = () => {
   console.log({ session, status });
   if (session) {
     return (
-      <header className="w-full lg:h-48 sm:h-12 flex justify-between items-center gap-[30px]">
-        <div className="w-full h-36 top-0 absolute grid grid-cols-3 grid-rows-1 gap-12">
-          <SearchBar />
-          <a href="/">
-            <Image
-              className="ml-[30%] px-2 mt-2 "
-              src="/Buime-transparent.png"
-              height={130}
-              width={130}
-              alt="buime logo"
-            />
-          </a>
+      <header className="w-full h:fit lg:flex lg:h-36 py-auto top-0 flex flex-col items-center lg:gap-[30px] aboslute">
+        <div className="lg:flex w-full h-1/2 lg:justify-around mt-2 items-center">
+          <div className="w-2/5 ml-2 my-auto h-2/3 relativejustify-center">
+            <a href="/">
+              <Image
+                className="object-contain"
+                src="/Buime-transparent.png"
+                fill={true}
+                alt="buime logo"
+              />
+            </a>
+          </div>
+          <div className="w-full items-center mx-auto justify-center">
+            <SearchBar />
+          </div>
 
-          <div className="w-full h-full my-10 lg:max-w-full lg:justify-end md:justify-end ">
-            <p className="ml-6">Hello, {session.user?.email}</p>
-            <div className="flex flex-row justify-items-end">
+          <div className="w-full h-full lg:w-4/12 lg:justify-end md:justify-end">
+            <p className="text-black text-xs font-light lg:text-base lg:font-normal px-3  leading-normal ">
+              Hello, {session.user?.email}
+            </p>
+            <div className="flex flex-row content-center">
               <AccountButton />
               <ShoppingButton />
               <ShoppingCartButton />
@@ -37,31 +42,44 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <NavBar />
+
+        <div className="flex flex-col w-full items-center">
+          <NavBar />
+        </div>
       </header>
     );
   }
   return (
-    <header className="w-full h-48 flex-col px-2 justify-center items-center gap-[30px] inline-flex">
-      <div className="w-full h-36 top-0 absolute grid grid-cols-3 grid-rows-1 gap-20">
-        <SearchBar />
+    <header className="w-full h:fit lg:flex lg:h-36 py-auto top-0 flex flex-col items-center lg:gap-[30px] aboslute ">
+    <div className="lg:flex w-full h-1/2 lg:justify-around mt-2 items-center">
+      <div className="w-1/5 ml-2 my-auto h-3/4 relative  justify-center">
         <a href="/">
           <Image
-            className="ml-[30%] px-2 mt-2 "
+            className="object-contain"
             src="/Buime-transparent.png"
-            height={130}
-            width={130}
+            fill={true}
             alt="buime logo"
           />
         </a>
+      </div>
+      <div className="w-full items-center mx-auto justify-center">
+        <SearchBar />
+      </div>
 
-        <div className="ml-auto my-10 py-2 px-auto pr-6 mr-6 h-12 content-center justify-between align-baseline">
+      <div className="w-full h-full lg:w-4/12 lg:justify-end md:justify-end">
+       
+        <div className="flex flex-row items-center pt-4 content-center">
           <AccountButton />
           <ShoppingButton />
+          
         </div>
       </div>
+    </div>
+
+    <div className="flex flex-col w-full items-center">
       <NavBar />
-    </header>
+    </div>
+  </header>
   );
 };
 
