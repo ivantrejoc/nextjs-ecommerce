@@ -42,7 +42,7 @@ const Card = ({ data }: Props) => {
         />
       </a>
       <div className="px-5 pb-5 h-1/5 mb-10">
-        <a href="#">
+        <a href={`/products/${data.id}`}>
           <h5 className="h-full text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
             {data.title}
           </h5>
