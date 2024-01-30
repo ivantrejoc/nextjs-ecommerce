@@ -29,9 +29,9 @@ const ShoppingCart = () => {
 
   const taxes = 0;
 
-  const shipping = Number(subtotal) * 0.05;
+  const shipping = (Number(subtotal) * 0.05).toFixed(2);
 
-  const grandTotal = Number(subtotal) + shipping;
+  const grandTotal = (Number(subtotal) + Number(shipping)).toFixed(2);
 
   return (
     <div className="h-auto bg-gray-200 pt-20">
