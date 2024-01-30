@@ -10,7 +10,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 name="name"
-                className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors"
                 placeholder="John Smith"
               />
             </div>
@@ -21,7 +21,7 @@ const CheckoutForm = () => {
               <input
                 name="email"
                 type="email"
-                className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors"
                 placeholder="john@mail.com"
               />
             </div>
@@ -31,7 +31,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 name="address"
-                className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors"
                 placeholder="10 Street XYZ 654"
               />
             </div>
@@ -41,7 +41,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 name="city"
-                className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors"
                 placeholder="San Francisco"
               />
             </div>
@@ -51,7 +51,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 name="state"
-                className="w-1/3 x-3 py-2 mb-1 border rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-1/3 x-3 py-2 mb-1 border rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors"
                 placeholder="CA"
               />
 
@@ -62,7 +62,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 name="postal_code"
-                className="w-1/3 x-3 py-2 mb-1 border rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-1/3 x-3 py-2 mb-1 border rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors"
                 placeholder="98603"
               />
             </div>
@@ -73,7 +73,7 @@ const CheckoutForm = () => {
 
               <select
                 name="country"
-                className="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer"
+                className="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors cursor-pointer"
               >
                 <option value="AU">Australia</option>
                 <option value="BE">Belgium</option>

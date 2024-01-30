@@ -52,12 +52,12 @@ const OrderSummary = () => {
 
   const taxes = 0;
 
-  const shipping = Number(subtotal) * 0.05;
+  const shipping = (Number(subtotal) * 0.05).toFixed(2);
 
-  const grandTotal = Number(subtotal) + shipping;
+  const grandTotal = (Number(subtotal) + Number(shipping)).toFixed(2);
 
   return (
-    <div className="col-span-1 bg-white lg:block hidden">
+    <div className="col-span-1 bg-white shadow rounded-md p-4 lg:block w-full">
       <h1 className="py-6 border-b-2 text-xl text-gray-600 px-8">
         Order Summary
       </h1>
@@ -71,17 +71,17 @@ const OrderSummary = () => {
         />
       ))}
 
-      <div className="px-8 border-b">
+      <div className="px-5 border-b">
         <div className="flex justify-between py-4 text-gray-600">
           <span>Subtotal</span>
-          <span className="font-semibold text-pink-500">${subtotal}</span>
+          <span className="font-semibold text-gray-700">${subtotal}</span>
         </div>
         <div className="flex justify-between py-4 text-gray-600">
           <span>Shipping</span>
-          <span className="font-semibold text-pink-500">${shipping}</span>
+          <span className="font-semibold text-gray-700">${shipping}</span>
         </div>
       </div>
-      <div className="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
+      <div className="font-semibold text-xl px-5 flex justify-between py-8 text-gray-600">
         <span>Total</span>
         <span>${grandTotal}</span>
       </div>

@@ -19,20 +19,20 @@ const PaymentRunway = () => {
             <div className="mb-3">
                 <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Name on card</label>
                 <div>
-                    <input className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="John Smith" type="text"/>
+                    <input className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors" placeholder="John Smith" type="text"/>
                 </div>
             </div>
             <div className="mb-3">
                 <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Card number</label>
                 <div>
-                    <input className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="0000 0000 0000 0000" type="text"/>
+                    <input className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors" placeholder="0000 0000 0000 0000" type="text"/>
                 </div>
             </div>
             <div className="mb-3 -mx-2 flex items-end">
                 <div className="px-2 w-1/4">
-                    <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Expiration date</label>
+                    <label className="text-gray-600 font-semibold text-sm mb-2">Expiration date</label>
                     <div>
-                        <select className="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer">
+                        <select className="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors cursor-pointer">
                             <option value="01">01 - January</option>
                             <option value="02">02 - February</option>
                             <option value="03">03 - March</option>
@@ -49,7 +49,7 @@ const PaymentRunway = () => {
                     </div>
                 </div>
                 <div className="px-2 w-1/4">
-                    <select className="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer">
+                    <select className="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors cursor-pointer">
                         <option value="2020">2020</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
@@ -65,7 +65,7 @@ const PaymentRunway = () => {
                 <div className="px-2 w-1/4">
                     <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Security code</label>
                     <div>
-                        <input className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="000" type="text"/>
+                        <input className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:ring-1  focus:ring-blue-300 transition-colors" placeholder="000" type="text"/>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@ const PaymentRunway = () => {
     </div>
 </div>
 <div>
-    <button className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-2 font-semibold"><i className="mdi mdi-lock-outline mr-1"></i> PAY NOW</button>
+    <button className="block w-full max-w-xs mx-auto bg-blue-400 hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg px-3 py-2 font-semibold"><i className="mdi mdi-lock-outline mr-1"></i> PAY NOW</button>
 </div>
     </section>
     

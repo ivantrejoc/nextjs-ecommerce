@@ -9,12 +9,13 @@ type SummaryItemProps = {
 };
 const SummaryItem = ({title, price, image, quantity}: SummaryItemProps) => {
    
+  const subtotal = (price * quantity).toFixed(2);
     return (
-    <div className="py-6 border-b space-y-6 px-8">
-      <div className="grid grid-cols-6 gap-2 border-b-1">
-        <div className="col-span-1 self-center">
+    <div className="py-6 border-b space-y-6 px-6">
+      <div className="flex justify-between gap-3 border-b-1">
+        <div className="col-span-1 max-h-40 self-center">
           <Image
-            width={100}
+            width={60}
             height={50}
             src={image}
             alt="Product"
@@ -24,18 +25,16 @@ const SummaryItem = ({title, price, image, quantity}: SummaryItemProps) => {
         <div className="flex flex-col col-span-3 pt-2">
           <span className="text-gray-600 text-md font-semi-bold">
             {title}
-          </span>
-          <span className="text-gray-400 text-sm inline-block pt-2">
-            Red Headphone
-          </span>
+          </span>          
         </div>
-        <div className="col-span-2 pt-3">
-          <div className="flex items-center space-x-2 text-sm justify-between">
-            <span className="text-gray-400">{quantity} x ${price}</span>
-            <span className="text-pink-400 font-semibold inline-block">
-              €61.98
-            </span>
+        <div className="col-span-2 flex">
+          <div className="w-6/12  items-center px-1 pt-3 space-x-2 text-xs block">
+            <span className="text-gray-400 text-xs px-2 mt-2">{quantity} x ${price.toFixed(2)}</span>
+            
           </div>
+          <span className="w-6/12 pt-6 text-gray-700 font-semibold block justify-end">
+              ${subtotal}
+            </span>
         </div>
       </div>
     </div>
