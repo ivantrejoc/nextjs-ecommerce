@@ -57,7 +57,7 @@ const OrderSummary = () => {
   const grandTotal = (Number(subtotal) + Number(shipping)).toFixed(2);
 
   return (
-    <div className="col-span-1 bg-white shadow rounded-md p-4 lg:block w-full">
+    <div className="col-span-1 bg-white shadow-lg rounded-md p-4 lg:block w-full">
       <h1 className="py-6 border-b-2 text-xl text-gray-600 px-8">
         Order Summary
       </h1>
