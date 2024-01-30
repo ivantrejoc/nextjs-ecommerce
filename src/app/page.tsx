@@ -12,16 +12,16 @@ export default function Home() {
         title="collections"
         className="flex flex-wrap justify-center py-2 mx-24 mt-12"
       >
-        <div className="w-1/4 px-6 mr-36">
-          <h3 className="text-black text-6xl font-light capitalize mt-24">
+        <div className="w-1/3 px-6 mr-36">
+          <h3 className="text-black text-3xl lg:text-6xl font-light capitalize mt-24">
             Collections
           </h3>
-          <p className="text-black text-xl font-normal capitalize mt-12">
+          <p className="text-black text-baseline text-center lg:text-left lg:text-xl font-normal capitalize mt-12">
             Explore many different collections from all our allies brands!
           </p>
           <a
             href="/products"
-            className="bg-blue-400 flex flex-row text-sm font-medium rounded-lg w-1/2 p-2 mt-12 justify-center hover:text-white hover:bg-blue-500"
+            className="bg-blue-400 flex flex-row text-xs lg:text-sm font-normal lg:font-medium rounded-lg w-full xs:w-full lg:w-1/2 p-2 mt-12 justify-center hover:text-white hover:bg-blue-500"
           >
             <HiShoppingBag className="mt-1 mr-2" />
             Shop Now
@@ -85,14 +85,14 @@ export default function Home() {
             height={50}
             alt="Andrey Zvyagintsev"
           />
-          <p className="text-white capitalize leading-10 my-3">
+          <p className="text-white text-sm lg:text-base capitalize leading-10 my-3">
             Lustrous yet understated. The new evening wear collection
             exclusively offered at the reopened Giorgio Armani boutique in Los
             Angeles.
           </p>
           <a
             href="/products"
-            className="bg-gray-200 flex flex-row text-xs font-medium rounded-lg w-1/3 p-2 mt-6 justify-center hover:text-white hover:bg-blue-500"
+            className="bg-gray-200 flex flex-row text-xs font-medium rounded-lg w-full lg:w-1/3 p-2 mt-6 justify-center hover:text-white hover:bg-blue-500"
           >See Collection</a>
         </div>
       </section>

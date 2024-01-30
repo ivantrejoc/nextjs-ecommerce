@@ -4,8 +4,8 @@ import { LiaArrowUpSolid } from "react-icons/lia";
 const Footer = () => {
   return (
     <footer className="w-full items-center mt-24 ">
-      <div className="bg-purple-300 h-36 grid grid-cols-3 sm:grid-cols-4 grid-rows-1 gap-8 sm:gap-6 py-10 px-12 place-items-center place-content-center">
-        <div className="flex flex-col h-36 w-40 mx-24 p-0">
+      <div className="bg-purple-300 h-36 flex gap-3 lg:gap-x-36 px-3 content-between place-content-center">
+        <div className="flex flex-col h-36 w-40">
           <div className="flex flex-col">
           <a href="/">
             <Image
@@ -21,7 +21,7 @@ const Footer = () => {
             Made with love and loads of coffee by Ivan Trejo. 
           </p>
           </a>
-          <div className="flex mt-0 sm:justify-center sm:mt-0">
+          <div className="flex mt-0 justify-center">
             <a href="#">
               <Image
                 className="m-2"
@@ -46,11 +46,16 @@ const Footer = () => {
           </div>         
           
         </div>
-        <div className=" p-0">
-          <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+        <div className="p-0">
+          <h2 className="mb-3 text-xs lg:text-base font-semibold text-gray-900 uppercase dark:text-white">
             catalog
           </h2>
-          <ul className="text-gray-800 dark:text-gray-400 font-medium">
+          <ul className="text-gray-800 dark:text-gray-400 text-xs lg:text-sm font-medium">
+          <li className="mb-2">
+              <a href="#" className="hover:underline">
+                Electronics
+              </a>
+              </li>
             <li className="mb-2">
               <a href="#" className="hover:underline">
                 Jewlery
@@ -68,11 +73,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="">
-          <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+        <div className="p-0">
+        <h2 className="mb-3 text-xs lg:text-base font-semibold text-gray-900 uppercase dark:text-white">
             About us
           </h2>
-          <ul className="text-gray-800 dark:text-gray-400 font-medium">
+          <ul className="text-xs lg:text-sm text-gray-800 dark:text-gray-400 font-medium">
             <li className="mb-2">
               <a href="#" className="hover:underline">
                 History
@@ -90,11 +95,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="">
-          <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+        <div className="p-0">
+        <h2 className="mb-3 text-xs lg:text-base font-semibold text-gray-900 uppercase dark:text-white">
             Costumer Service
           </h2>
-          <ul className="text-gray-800 dark:text-gray-400 font-medium">
+          <ul className="text-xs lg:text-sm text-gray-800 dark:text-gray-400 font-medium">
             <li className="mb-2">
               <a href="#" className="hover:underline">
                 Contact us

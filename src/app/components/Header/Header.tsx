@@ -16,7 +16,7 @@ const Header = () => {
     return (
       <header className="w-full h:fit lg:flex lg:h-36 py-auto top-0 flex flex-col items-center lg:gap-[30px] aboslute">
         <div className="lg:flex w-full h-1/2 lg:justify-around mt-2 items-center">
-          <div className="w-2/5 ml-2 my-auto h-2/3 relativejustify-center">
+          <div className="w-2/5 ml-1 my-auto h-2/3 relative justify-center">
             <a href="/">
               <Image
                 className="object-contain"
