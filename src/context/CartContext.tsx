@@ -37,16 +37,26 @@ export function useCart() {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    const localCartItems = localStorage.getItem("cartItems");
-    const parsedCartItems = localCartItems ? JSON.parse(localCartItems) : [];
-    console.log("ITEMS EN localStorage: ", parsedCartItems);
-    return parsedCartItems;
+    if(typeof window !== "undefined") {
+      const localCartItems = localStorage.getItem("cartItems");
+      const parsedCartItems = localCartItems ? JSON.parse(localCartItems) : [];
+      console.log("ITEMS EN localStorage: ", parsedCartItems);
+      return parsedCartItems; 
+    } else{
+      return [];
+    }
+    
   });
   const [isOpen, setIsOpen] = useState(() => {
-    const localIsOpen = localStorage.getItem("isOpen");
+    if(typeof window !== "undefined"){
+      const localIsOpen = localStorage.getItem("isOpen");
     const parsedIsOpen = localIsOpen ? JSON.parse(localIsOpen) : [];
     console.log("ESTADO DE isOpen EN localStorage: ", parsedIsOpen);
     return parsedIsOpen;
+    } else{
+      return [];
+    }
+    
   });
 
   //Almacenar cambios cartItems e isOpen en localStorage:
