@@ -8,10 +8,10 @@ export default function Home() {
     <main>
       <section
         title="collections"
-        className="flex flex-col md:flex-wrap justify-center py-2 mx-24 mt-12"
+        className="flex flex-wrap justify-center py-2 mx-24 mt-12 gap-0"
       >
-        <div className="w-full md:w-1/3 px-6 mr-36">
-          <h3 className="text-black text-3xl justify-center lg:text-6xl font-light capitalize mt-24">
+        <div className="w-full mb-3 md:mb-0 md:w-1/3 px-6 justify-center">
+          <h3 className="text-black text-3xl lg:text-6xl font-light capitalize mt-24">
             Collections
           </h3>
           <p className="text-black text-baseline text-center lg:text-left lg:text-xl font-normal capitalize mt-12">
@@ -19,7 +19,7 @@ export default function Home() {
           </p>
           <a
             href="/products"
-            className="bg-blue-400 flex flex-row text-xs lg:text-sm font-normal lg:font-medium rounded-lg w-full xs:w-full lg:w-1/2 p-2 mt-12 justify-center hover:text-white hover:bg-blue-500"
+            className="bg-blue-400 flex flex-row text-xs lg:text-sm font-normal lg:font-medium rounded-lg w-full xs:w-full lg:w-1/2 p-2 mt-12 justify-center text-center hover:text-white hover:bg-blue-500"
           >
             <HiShoppingBag className="mt-1 mr-2" />
             Shop Now
@@ -110,7 +110,7 @@ export default function Home() {
           </p>
           <a
             href="/products"
-            className="bg-gray-200 flex flex-row text-xs font-medium rounded-lg w-3/4 p-2 mt-6 justify-center hover:text-white hover:bg-blue-500"
+            className="bg-gray-200 flex flex-row text-xs font-medium rounded-lg w-3/4 p-2 sm:pl-3 mt-6 justify-center hover:text-white hover:bg-blue-500"
           >
             See Collection
           </a>
