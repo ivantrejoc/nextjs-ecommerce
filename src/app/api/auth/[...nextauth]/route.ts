@@ -3,7 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../../firebase";
 
-const secret = process.env.NEXAUTH_SECRET;
+const secret = "buime-shopping";
 const handler = NextAuth({
   secret,
   pages: {
