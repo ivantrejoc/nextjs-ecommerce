@@ -14,7 +14,7 @@ const monsterrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Buime",
-  description: "Find whatever you want in one site"
+  description: "Online store. Find whatever you want in one site"
 };
 
 export default function RootLayout({
