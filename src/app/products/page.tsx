@@ -31,7 +31,7 @@ const Products = () => {
   };
 
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center h-fit">
       <Pagination
         pageSize={pageSize}
         products={products}

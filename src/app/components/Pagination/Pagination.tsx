@@ -22,7 +22,7 @@ const Pagination = ({
   console.log("Estos son los números de página: ", pageNumbers);
   console.log("Esta es la página actual: ", currentPage);
   return (
-    <nav className="flex flex-row items-center -space-x-px h-10 mb-8 mt-2">
+    <nav className="flex flex-row items-center -space-x-px h-10 mb-8 mt-6">
       <ul className="flex items-center -space-x-px h-10 text-base">
         <li>
           <button
