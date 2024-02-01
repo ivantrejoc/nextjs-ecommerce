@@ -5,8 +5,8 @@ import PaymentRunway from "../components/PaymentRunway/PaymentRunway";
 const Checkout = () => {
   return (
     <main>
-      <div className="bg-gray-200 w-full h-full max-w-full py-2 flex flex-col lg:flex-row justify-center items-center">
-      <div className="flex flex-col mt-3 w-5/6 lg:w-2/5 align-center">
+      <div className="bg-gray-200 w-full h-full max-w-full py-2 flex flex-col lg:flex-row justify-center">
+      <div className="flex flex-col mt-14 w-5/6 lg:w-2/5">
           <OrderSummary />
         </div>
         <div className="lg:col-span-2 col-span-3 space-y-8 px-12 mt-6">
